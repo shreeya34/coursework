@@ -70,7 +70,7 @@
     }else{  
    
         //axios.get(`http://localhost/weather_storage/my_api.php?city=Denver`) 
-        axios.get(`https://shreeya34.github.io/coursework/weather_storage/my_api.php?city=Denver`)
+        axios.get(`https://shreeya34.github.io/coursework/my_api.php?city=Denver`)
         .then(function (response) {
             console.log(response); 
             const kelvinToCelsius = Math.round(response ['data']['weather_temperature'])-273+"°C";
