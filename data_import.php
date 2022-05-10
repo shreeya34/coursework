@@ -1,8 +1,8 @@
 <?php
-$mysqli=new mysqli("localhost","root","","assignment");
+$mysqli=new mysqli("bqwmvogwalhwrqibuiiy-mysql.services.clever-cloud.com","uxwpcqy0xvtobpas","63CCc3pcu74xtVb4Hmd6","bqwmvogwalhwrqibuiiy");
 // Select weather data for given parameters
     $sqli = "SELECT *
-    FROM weather_wolverhampton
+    FROM weather
     WHERE city = '{$_GET['city']}'
     AND weather_when >= DATE_SUB(NOW(), INTERVAL 10 SECOND)
     ORDER BY weather_when DESC limit 1";
@@ -28,7 +28,7 @@ $mysqli=new mysqli("localhost","root","","assignment");
     $icon=$json['weather'][0]['icon'];
 
     // Build INSERT SQL statement
-    $sql = "INSERT INTO weather_wolverhampton (weather_description, weather_temperature, weather_wind, weather_when,weather_pressure,weather_humidity, city,icon)
+    $sql = "INSERT INTO weather (weather_description, weather_temperature, weather_wind, weather_when,weather_pressure,weather_humidity, city,icon)
     VALUES('{$weather_description}', '{$weather_temperature}', '{$weather_wind}', '{$weather_when}','{$weather_pressure}','{$weather_humidity}','{$city}','{$icon}')";
     
     // Run SQL statement and report errors

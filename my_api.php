@@ -2,14 +2,14 @@
 header('Access-Control-Allow-Origin: *');
 include ('data_import.php');
 $city = $_GET['city'];
-$mysqli=new mysqli("localhost","root","","assignment");
+$mysqli=new mysqli("bqwmvogwalhwrqibuiiy-mysql.services.clever-cloud.com","uxwpcqy0xvtobpas","63CCc3pcu74xtVb4Hmd6","bqwmvogwalhwrqibuiiy");
 if($mysqli->connect_error){
     echo "Failed to connect to MySQL:".$mysqli->connect_error;
     exit();
 }
 //Execute SQL query
 $sql ="SELECT* 
-       FROM weather_wolverhampton
+       FROM weather
        where city='{$_GET['city']}'
        ORDER BY weather_when DESC limit 1";
 
